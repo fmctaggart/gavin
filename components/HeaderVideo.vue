@@ -28,7 +28,7 @@ export default {
     },
     poster: {
       type: String,
-      default: 'Type-Master.png',
+      default: 'Type-Master-poster.png',
     },
   },
 }

@@ -23,6 +23,9 @@ export default {
   head: {
     title: process.env.npm_package_name || '',
     titleTemplate: 'Gavin McGregor - %s',
+    htmlAttrs: {
+      lang: 'en',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,7 +40,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://www.gavinmcgregor.co.uk',
+        content: 'https://gavin.mctweb.co.uk',
       },
       // {
       //   property: 'og:image',
@@ -106,7 +109,7 @@ export default {
    */
   modules: ['@nuxtjs/pwa', '@nuxtjs/sitemap', 'nuxt-lazy-load'],
   sitemap: {
-    hostname: 'https://www.gavinmcgregor.co.uk',
+    hostname: 'https://gavin.mctweb.co.uk',
     gzip: true,
     filter({ routes }) {
       return routes.map((route) => {

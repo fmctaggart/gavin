@@ -1,12 +1,21 @@
 <template>
   <nav
     class="fixed z-50 w-full transition-all duration-500"
-    :class="[topOfPage && darkbg ? 'text-white' : 'bg-white text-black']"
+    :class="[
+      topOfPage && darkbg
+        ? 'text-white'
+        : open
+        ? 'text-white'
+        : 'bg-white text-black',
+    ]"
   >
     <header
-      class="container z-40 flex items-center justify-between w-full px-6 py-5 mx-auto"
+      class="container relative z-50 flex items-center justify-between w-full px-6 py-5 mx-auto"
     >
-      <NuxtLink to="/" class="text-xl uppercase heading"
+      <NuxtLink
+        to="/"
+        class="text-xl uppercase heading"
+        :class="{ open: 'text-white' }"
         >Gavin McGregor</NuxtLink
       >
       <svg
@@ -16,6 +25,7 @@
         viewBox="0 0 77.4 57.9"
         xml:space="preserve"
         class="block w-6 h-auto transition-all duration-500 cursor-pointer md:hidden"
+        :class="[topOfPage && darkbg ? 'text-white' : 'bg-white text-black']"
         @click="open = !open"
       >
         <g>
@@ -60,11 +70,11 @@
       </ul>
     </header>
     <div
-      class="fixed z-50 flex items-center justify-center h-full -mt-16 text-white transition-all duration-700 transform bg-black md:hidden heading"
+      class="fixed z-40 flex items-center justify-center h-full -mt-16 text-white transition-all duration-700 transform bg-black md:hidden heading"
       :class="[open ? '' : '-translate-x-full']"
-      style="min-width: 80vw;"
+      style="min-width: 80vw; max-width: 80vw;"
     >
-      <ul class="container px-12 mx-auto text-3xl">
+      <ul class="container px-12 mx-auto text-2xl">
         <li class="py-3">
           <NuxtLink
             to="/projects"

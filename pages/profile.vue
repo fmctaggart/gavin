@@ -5,7 +5,7 @@
         <div class="object-cover col-span-5 lg:col-span-3 lg:row-span-5">
           <picture>
             <source
-              srcset="~assets/About-Gavin.png?format=webp"
+              :srcset="`${require(`~/assets/About-Gavin.png?format=webp`)} `"
               type="image/webp"
             />
             <source srcset="~assets/About-Gavin.png" type="image/png" />
@@ -21,7 +21,7 @@
         >
           <picture>
             <source
-              srcset="~assets/About-Gavin-2.png?format=webp"
+              :srcset="`${require(`~/assets/About-Gavin-2.png?format=webp`)} `"
               type="image/webp"
             />
             <source srcset="~assets/About-Gavin.png" type="image/png" />
