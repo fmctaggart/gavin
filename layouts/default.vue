@@ -1,7 +1,7 @@
 <template>
   <div>
     <MainNavigation />
-    <Nuxt />
+    <Nuxt class="min-h-screen bg-white" />
     <MainFooter />
   </div>
 </template>

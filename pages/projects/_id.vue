@@ -19,18 +19,41 @@
     </div>
     <div class="container px-6 pb-24 mx-auto">
       <section class="grid grid-cols-2 gap-5">
-        <img
-          :src="require(`~/assets/${info.images[0]}`)"
-          class="w-full h-auto col-span-2"
-          :alt="info.title"
-        />
-        <img
+        <div class="col-span-2">
+          <picture>
+            <source
+              :srcset="require(`~/assets/${info.images[0]}?format=webp`)"
+              type="image/webp"
+            />
+            <source
+              :srcset="require(`~/assets/${info.images[0]}`)"
+              type="image/png"
+            />
+            <img
+              :src="require(`~/assets/${info.images[0]}`)"
+              class="w-full h-auto"
+              :alt="info.title"
+            />
+          </picture>
+        </div>
+        <div
           v-for="(image, index) in info.images.slice(1, info.images.length)"
           :key="index"
-          :src="require(`~/assets/${image}`)"
-          class="w-full h-auto cols-span-2 md:col-span-1"
-          :alt="info.title + ' ' + index"
-        />
+          class="col-span-2 md:col-span-1"
+        >
+          <picture>
+            <source
+              :srcset="require(`~/assets/${image}?format=webp`)"
+              type="image/webp"
+            />
+            <source :srcset="require(`~/assets/${image}`)" type="image/png" />
+            <img
+              :src="require(`~/assets/${image}`)"
+              class="w-full h-auto"
+              :alt="info.title + ' ' + index"
+            />
+          </picture>
+        </div>
       </section>
     </div>
   </div>

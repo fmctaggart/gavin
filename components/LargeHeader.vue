@@ -10,14 +10,11 @@
       class="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-50"
     ></div>
     <picture>
-      <!-- <source
-          :srcset="`${require(`~/assets/${image}?format=webp`)} `"
-          type="image/webp"
-        />
-        <source
-          :srcset="`${require(`~/assets/${image}`)}`"
-          type="image/png" 
-      /> -->
+      <source
+        :srcset="`${require(`~/assets/${image}?format=webp`)} `"
+        type="image/webp"
+      />
+      <source :srcset="`${require(`~/assets/${image}`)}`" type="image/png" />
       <img
         :src="require(`~/assets/${image}`)"
         :alt="title"

@@ -15,7 +15,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 77.4 57.9"
         xml:space="preserve"
-        class="block w-6 h-auto text-white transition-all duration-500 cursor-pointer md:hidden hover:text-gray-400"
+        class="block w-6 h-auto transition-all duration-500 cursor-pointer md:hidden"
         @click="open = !open"
       >
         <g>
@@ -60,18 +60,19 @@
       </ul>
     </header>
     <div
-      class="fixed z-50 flex items-center justify-center h-full -mt-32 text-white transition-all duration-700 transform bg-black md:hidden heading"
-      :class="[open ? '-translate-x-full' : '']"
+      class="fixed z-50 flex items-center justify-center h-full -mt-16 text-white transition-all duration-700 transform bg-black md:hidden heading"
+      :class="[open ? '' : '-translate-x-full']"
+      style="min-width: 80vw;"
     >
-      <ul class="container px-12 mx-auto">
-        <li>
+      <ul class="container px-12 mx-auto text-3xl">
+        <li class="py-3">
           <NuxtLink
             to="/projects"
             class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
             >Projects</NuxtLink
           >
         </li>
-        <li>
+        <li class="py-3">
           <NuxtLink
             to="/profile"
             class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
@@ -93,7 +94,7 @@ export default {
     return {
       topOfPage: true,
       page: 'index',
-      open: true,
+      open: false,
     }
   },
   computed: {

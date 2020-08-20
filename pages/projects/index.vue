@@ -8,11 +8,21 @@
           :to="'/projects/' + client.shorttitle"
           class="col-span-2 md:col-span-1"
         >
-          <img
-            :src="require(`~/assets/${client.main}`)"
-            :alt="client.name"
-            class="object-cover w-full h-auto"
-          />
+          <picture>
+            <source
+              :srcset="require(`~/assets/${client.main}?format=webp`)"
+              type="image/webp"
+            />
+            <source
+              :srcset="require(`~/assets/${client.main}`)"
+              type="image/png"
+            />
+            <img
+              :src="require(`~/assets/${client.main}`)"
+              class="object-cover w-full h-auto"
+              :alt="client.name"
+            />
+          </picture>
         </NuxtLink>
       </div>
     </div>
@@ -25,6 +35,11 @@ export default {
   data() {
     return {
       clients,
+    }
+  },
+  head() {
+    return {
+      title: 'Projects',
     }
   },
 }

@@ -2,14 +2,37 @@
   <div>
     <section class="container px-24 pt-32 mx-auto">
       <div class="grid grid-cols-6 gap-5 lg:grid-rows-5">
-        <img
-          src="~assets/About-Gavin.png"
-          class="object-cover col-span-5 lg:col-span-3 lg:row-span-5"
-        />
-        <img
-          src="~assets/About-Gavin-2.png"
+        <div class="object-cover col-span-5 lg:col-span-3 lg:row-span-5">
+          <picture>
+            <source
+              srcset="~assets/About-Gavin.png?format=webp"
+              type="image/webp"
+            />
+            <source srcset="~assets/About-Gavin.png" type="image/png" />
+            <img
+              src="~assets/About-Gavin.png"
+              alt="Visit to Vondelpark, Amsterdam"
+              class="w-full h-auto"
+            />
+          </picture>
+        </div>
+        <div
           class="object-cover col-span-5 col-start-2 mt-4 lg:col-span-3 lg:row-span-4"
-        />
+        >
+          <picture>
+            <source
+              srcset="~assets/About-Gavin-2.png?format=webp"
+              type="image/webp"
+            />
+            <source srcset="~assets/About-Gavin.png" type="image/png" />
+            <img
+              src="~assets/About-Gavin-2.png"
+              alt="Risograph Print Workshop, Glasgow."
+              class="w-full h-auto"
+            />
+          </picture>
+        </div>
+
         <p class="col-span-5 col-start-2 text-xs lg:col-span-3 lg:row-span-1">
           [1] Visit to Vondelpark, Amsterdam.<br />
           [2] Risograph Print Workshop, Glasgow.
@@ -34,7 +57,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'Profile',
+    }
+  },
+}
 </script>
 
 <style scoped></style>

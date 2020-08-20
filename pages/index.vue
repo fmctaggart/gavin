@@ -1,7 +1,7 @@
 <template>
   <article>
     <HeaderVideo poster="" video="Type-Master.mp4" />
-    <TextWithTitle title="Creating Thinking for Exciting Brands">
+    <TextWithTitle title="Creative Thinking for Exciting Brands">
       Gavin is a graphic designer and website developer living in Glasgow.
       Specialising in branding; He is involved in planning, building and
       executing designs for businesses, tailored to expressing all facets of the
@@ -34,7 +34,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'Homepage',
+    }
+  },
+}
 </script>
 
 <style></style>
