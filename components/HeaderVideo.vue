@@ -4,7 +4,7 @@
     style="height: 80vh; min-height: 400px;"
   >
     <video
-      class="absolute z-0 object-cover w-3/4 h-auto md:w-1/2 lg:w-1/3"
+      class="absolute z-0 object-cover w-full h-auto md:w-1/2 lg:w-1/3"
       autoplay
       muted
       loop

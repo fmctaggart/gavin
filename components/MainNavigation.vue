@@ -1,20 +1,18 @@
 <template>
-  <nav
-    class="fixed z-50 w-full transition-all duration-500"
-    :class="[
-      topOfPage && darkbg
-        ? 'text-white'
-        : open
-        ? 'text-white'
-        : 'bg-white text-black',
-    ]"
-  >
+  <nav class="fixed z-50 w-full">
     <header
-      class="container relative z-50 flex items-center justify-between w-full px-6 py-5 mx-auto"
+      class="container absolute z-50 flex items-center justify-between w-full px-6 py-5 mx-auto transition-all duration-500"
+      :class="[
+        topOfPage && darkbg
+          ? 'text-white'
+          : open
+          ? 'bg-black text-white '
+          : 'bg-white text-black',
+      ]"
     >
       <NuxtLink
         to="/"
-        class="text-xl uppercase heading"
+        class="text-lg uppercase md:text-xl heading"
         :class="{ open: 'text-white' }"
         >Gavin McGregor</NuxtLink
       >
@@ -24,8 +22,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 77.4 57.9"
         xml:space="preserve"
-        class="block w-6 h-auto transition-all duration-500 cursor-pointer md:hidden"
-        :class="[topOfPage && darkbg ? 'text-white' : 'bg-white text-black']"
+        class="block w-8 h-auto transition-all duration-500 cursor-pointer md:hidden"
         @click="open = !open"
       >
         <g>
@@ -70,7 +67,7 @@
       </ul>
     </header>
     <div
-      class="fixed z-40 flex items-center justify-center h-full -mt-16 text-white transition-all duration-700 transform bg-black md:hidden heading"
+      class="fixed z-40 flex items-center justify-center h-full text-white transition-all duration-700 transform bg-black md:hidden heading"
       :class="[open ? '' : '-translate-x-full']"
       style="min-width: 80vw; max-width: 80vw;"
     >

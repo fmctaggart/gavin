@@ -20,7 +20,7 @@
         </video>
       </NuxtLink>
       <NuxtLink
-        to="/projects/reagan"
+        to="/projects/reagan-hallett"
         class="grid w-full mt-8 md:grid-cols-4"
         aria-label="Reagan Hallet"
       >
@@ -38,6 +38,14 @@
         </section>
       </NuxtLink>
     </div>
+    <TextWithTitle title="Services & Skills.">
+      Having developed skills a wide range of disciplines, Gavin brings his
+      expertise to every stage of the branding process. He has hands on
+      experience with: Brand strategy and planning; Art direction; Identity
+      design for logos and brand systems; Designs for digital and print; Web
+      design and development; Animation for motion graphics; Storyboarding for
+      video pre-production; Illustration; Type and lettering design.
+    </TextWithTitle>
   </article>
 </template>
 
