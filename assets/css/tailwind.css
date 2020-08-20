@@ -1,0 +1,26 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* purgecss start ignore */
+@import './transitions.css';
+
+@font-face {
+  font-family: 'Agrandir';
+  font-weight: normal;
+  src: url('~assets/fonts/Agrandir-GrandHeavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaLTS';
+  font-weight: normal;
+  src: url('~assets/fonts/HelveticaLTStd-Bold.woff') format('woff');
+}
+
+.heading {
+  @apply leading-tight;
+  font-family: Agrandir;
+  text-transform: uppercase;
+}
+
+/* purgecss stop ignore */

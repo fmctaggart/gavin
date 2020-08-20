@@ -1,0 +1,52 @@
+export default [
+  {
+    title: 'Reagan Hallett',
+    shorttitle: 'reagan-hallett',
+    main: 'reagan/1.png',
+    header: 'reagan/1.png',
+    images: [
+      'reagan/1.png',
+      'reagan/2.png',
+      'reagan/3.png',
+      'reagan/4.png',
+      'reagan/5.png',
+    ],
+  },
+  {
+    title: 'Nick Bruce',
+    heading: 'Funk Soul Fever',
+    shorttitle: 'nick-bruce',
+    brief:
+      'Nick Bruce & his band are a six-piece funk/soul function and wedding band. They came to me looking for a rebrand to tie in with their new public funk soul dinner dance events in an old 50’s Motown style. They wanted the brand to feel a bit more modern, and not necessarily multicoloured and as primitive as some of the posters of the time. The challenge was to create a brand that drew inspiration from traditional 50’s design while updating it for Nick’s modern band.',
+    main: 'nick-bruce/5.png',
+    header: 'nick-bruce/header.png',
+    images: [
+      'nick-bruce/1.png',
+      'nick-bruce/2.png',
+      'nick-bruce/3.png',
+      'nick-bruce/4.png',
+      'nick-bruce/5.png',
+      'nick-bruce/6.png',
+      'nick-bruce/7.png',
+    ],
+  },
+  {
+    title: `Buddy's BBQ`,
+    heading: 'SOUTHERN STYLE BBQ BRANDING PROJECT',
+    shorttitle: 'buddys-bbq',
+    brief: `Buddy’s BBQ and Burgers – Glasgow Southside’s Original Burger MVPs asked Walnut Wasp to help them with their rebranding. As well as a fresh new logo Buddy’s wanted to update their website and show off with some gorgeous food photography, video and marketing. Art direction, photography & video by Walnut Wasp.`,
+    main: 'buddys/9.png',
+    header: 'buddys/header.png',
+    images: [
+      'buddys/1.png',
+      'buddys/2.png',
+      'buddys/3.png',
+      'buddys/4.png',
+      'buddys/5.png',
+      'buddys/6.png',
+      'buddys/7.png',
+      'buddys/9.png',
+      'buddys/10.png',
+    ],
+  },
+]
