@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed z-50 w-full">
     <header
-      class="container absolute z-50 flex items-center justify-between w-full px-6 py-5 mx-auto transition-all duration-500"
+      class="absolute z-50 w-full mx-auto transition-all duration-500"
       :class="[
         topOfPage && darkbg
           ? 'text-white'
@@ -10,61 +10,65 @@
           : 'bg-white text-black',
       ]"
     >
-      <NuxtLink
-        to="/"
-        class="text-lg uppercase md:text-xl heading"
-        :class="{ open: 'text-white' }"
-        >Gavin McGregor</NuxtLink
+      <section
+        class="container flex items-center justify-between px-6 py-5 mx-auto"
       >
-      <svg
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 77.4 57.9"
-        xml:space="preserve"
-        class="block w-8 h-auto transition-all duration-500 cursor-pointer md:hidden"
-        @click="open = !open"
-      >
-        <g>
-          <rect
-            x="1.7"
-            y="1.9"
-            class="fill-current"
-            width="74"
-            height="8"
-          ></rect>
-          <rect
-            x="1.7"
-            y="42.9"
-            class="fill-current"
-            width="74"
-            height="8"
-          ></rect>
-          <rect
-            x="1.7"
-            y="22.9"
-            class="fill-current"
-            width="74"
-            height="8"
-          ></rect>
-        </g>
-      </svg>
-      <ul class="hidden grid-cols-2 gap-6 text-xs md:grid">
-        <li>
-          <NuxtLink
-            to="/projects"
-            class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
-            >Projects</NuxtLink
-          >
-        </li>
-        <li>
-          <NuxtLink
-            to="/profile"
-            class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
-            >Profile</NuxtLink
-          >
-        </li>
-      </ul>
+        <NuxtLink
+          to="/"
+          class="text-lg uppercase md:text-xl heading"
+          :class="{ open: 'text-white' }"
+          >Gavin McGregor</NuxtLink
+        >
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 77.4 57.9"
+          xml:space="preserve"
+          class="block w-8 h-auto transition-all duration-500 cursor-pointer md:hidden"
+          @click="open = !open"
+        >
+          <g>
+            <rect
+              x="1.7"
+              y="1.9"
+              class="fill-current"
+              width="74"
+              height="8"
+            ></rect>
+            <rect
+              x="1.7"
+              y="42.9"
+              class="fill-current"
+              width="74"
+              height="8"
+            ></rect>
+            <rect
+              x="1.7"
+              y="22.9"
+              class="fill-current"
+              width="74"
+              height="8"
+            ></rect>
+          </g>
+        </svg>
+        <ul class="hidden grid-cols-2 gap-6 text-xs md:grid">
+          <li>
+            <NuxtLink
+              to="/projects"
+              class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
+              >Projects</NuxtLink
+            >
+          </li>
+          <li>
+            <NuxtLink
+              to="/profile"
+              class="transition-all duration-500 border-b-2 border-transparent hover:border-gray-500"
+              >Profile</NuxtLink
+            >
+          </li>
+        </ul>
+      </section>
     </header>
     <div
       class="fixed z-40 flex items-center justify-center h-full text-white transition-all duration-700 transform bg-black md:hidden heading"
