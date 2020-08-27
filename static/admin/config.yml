@@ -19,7 +19,8 @@ collections:
       - { label: 'List Image', name: 'mainimage', widget: 'image' }
       - { label: 'Header Image', name: 'headerimage', widget: 'image' }
       - { label: 'Images', name: 'images', widget: 'image' }
-      - widget: list
+      - widget: 'list'
+        name: 'images'
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Photo, name: photo, widget: image }
