@@ -5,19 +5,22 @@
         <NuxtLink
           v-for="(client, index) in clients"
           :key="index"
-          :to="'/projects/' + client.slug"
+          :to="'/projects/' + client.shorttitle"
           class="col-span-2 md:col-span-1"
         >
           <picture>
             <source
-              :srcset="`${client.mainimage}?format=webp`"
+              :srcset="require(`~/assets/${client.main}?format=webp`)"
               type="image/webp"
             />
-            <source :srcset="client.mainimage" type="image/png" />
+            <source
+              :srcset="require(`~/assets/${client.main}`)"
+              type="image/png"
+            />
             <img
-              :src="client.mainimage"
+              :src="require(`~/assets/${client.main}`)"
               class="object-cover w-full h-auto"
-              :alt="client.title"
+              :alt="client.name"
             />
           </picture>
         </NuxtLink>
@@ -27,10 +30,9 @@
 </template>
 
 <script>
+import clients from '../../static/clients.js'
 export default {
-  async asyncData({ $content, params }) {
-    const clients = await $content('/projects').fetch()
-
+  data() {
     return {
       clients,
     }

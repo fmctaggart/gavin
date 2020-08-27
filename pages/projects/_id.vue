@@ -1,15 +1,15 @@
 <template>
   <div v-if="info">
-    <LargeHeader :title="info.title" :image="info.header" />
+    <LargeHeader :title="info.title" :image="info.headerimage" />
     <div class="container flex justify-center w-full px-6 py-32 mx-auto">
       <article class="w-full pt-6 md:w-2/3 lg:w-1/2">
-        <h2 v-if="info.heading" class="mb-3 text-3xl heading lg:text-4xl">
-          {{ info.heading }}
+        <h2 v-if="info.description" class="mb-3 text-3xl heading lg:text-4xl">
+          {{ info.description }}
         </h2>
         <h2 v-else class="mb-3 text-3xl heading lg:text-4xl">
           {{ info.title }}
         </h2>
-        <p v-if="info.brief" class="lg:text-lg">{{ info.brief }}</p>
+        <nuxt-content :document="info" class="prose prose-lg" />
         <NuxtLink
           to="/projects"
           class="float-right mt-6 text-xl duration-300 trasition-all hover:text-gray-600"
@@ -22,36 +22,29 @@
         <div class="col-span-2">
           <picture>
             <source
-              :srcset="require(`~/assets/${info.images[0]}?format=webp`)"
+              :srcset="`${info.allImages[0].photo}?format=webp`"
               type="image/webp"
             />
-            <source
-              :srcset="require(`~/assets/${info.images[0]}`)"
-              type="image/png"
-            />
+            <source :srcset="info.allImages[0].photo" type="image/png" />
             <img
-              :src="require(`~/assets/${info.images[0]}`)"
+              :src="info.allImages[0].photo"
               class="w-full h-auto"
-              :alt="info.title"
+              :alt="info.allImages[0].name"
             />
           </picture>
         </div>
         <div
-          v-for="(image, index) in info.images.slice(1, info.images.length)"
+          v-for="(image, index) in info.allImages.slice(
+            1,
+            info.allImages.length
+          )"
           :key="index"
           class="col-span-2 md:col-span-1"
         >
           <picture>
-            <source
-              :srcset="require(`~/assets/${image}?format=webp`)"
-              type="image/webp"
-            />
-            <source :srcset="require(`~/assets/${image}`)" type="image/png" />
-            <img
-              :src="require(`~/assets/${image}`)"
-              class="w-full h-auto"
-              :alt="info.title + ' ' + index"
-            />
+            <source :srcset="`${image.photo}?format=webp`" type="image/webp" />
+            <source :srcset="image.photo" type="image/png" />
+            <img :src="image.photo" class="w-full h-auto" :alt="image.name" />
           </picture>
         </div>
       </section>
@@ -60,17 +53,14 @@
 </template>
 
 <script>
-import clients from '../../static/clients.js'
 export default {
-  data() {
+  async asyncData({ $content, params }) {
+    const info = await $content('/projects/' + params.id || 'index').fetch()
     return {
-      info: '',
+      info,
     }
   },
 
-  mounted() {
-    this.info = clients.find((x) => x.shorttitle === this.$route.params.id)
-  },
   head() {
     return {
       title: this.info.title,
@@ -78,7 +68,25 @@ export default {
         {
           hid: 'description',
           name: 'description',
+          content: this.info.description,
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.info.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.info.description,
+        },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
           content: this.info.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.info.description,
         },
       ],
     }
@@ -86,8 +94,17 @@ export default {
 }
 </script>
 
-<style scoped>
-li {
-  @apply list-inside list-disc;
+<style>
+.prose h1 {
+  @apply my-2;
+}
+.prose h2 {
+  @apply text-gray-800 mt-12 mb-3 leading-tight;
+}
+.prose > a {
+  @apply font-semibold  no-underline duration-200 px-1;
+}
+.prose > a:hover {
+  @apply bg-gray-100;
 }
 </style>

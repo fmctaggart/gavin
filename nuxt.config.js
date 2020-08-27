@@ -107,7 +107,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/sitemap', 'nuxt-lazy-load'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
+    'nuxt-lazy-load',
+    '@nuxt/content',
+  ],
   sitemap: {
     hostname: 'https://gavin.mctweb.co.uk',
     gzip: true,
