@@ -24,3 +24,16 @@ collections:
           widget: 'image',
           allow_multiple: true,
         }
+      - widget: list
+      fields:
+        - {label: Name, name: name, widget: string}
+        - {label: Photo, name: photo, widget: image}
+        - {label: Photo2, name: photo2, widget: image}
+        - {label: Photo3, name: photo3, widget: image}
+        - {label: Photo4, name: photo4, widget: image}
+        - {label: Photo5, name: photo5, widget: image}
+        - {label: Photo6, name: photo6, widget: image}
+        - {label: Photo7, name: photo7, widget: image}
+        - {label: Photo8, name: photo8, widget: image}
+        - {label: Photo9, name: photo9, widget: image}
+
